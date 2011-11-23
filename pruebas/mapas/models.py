@@ -8,15 +8,15 @@ class Ferrocarril(models.Model):
 	nombre = models.CharField(max_length=45)
 
 	mpoly = models.MultiLineStringField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class Lagos(models.Model):
 	nombre = models.CharField(max_length=45)
 	t = models.IntegerField()
-	supm2 = FloatField()
+	supm2 = models.FloatField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class GridX(models.Model):
 	extx = models.FloatField()
@@ -24,10 +24,10 @@ class GridX(models.Model):
 	extz = models.FloatField()
 
 	mpoly = models.MultiLineStringField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class Caminos(models.Model):
-	id = models.IntegerField()
+	_id = models.IntegerField()
 	material = models.CharField(max_length=20)
 	estado = models.CharField(max_length=20)
 	sentido = models.CharField(max_length=20)
@@ -39,7 +39,7 @@ class Caminos(models.Model):
 	nrocalle = models.IntegerField()
 
 	mpoly = models.MultiLineStringField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class ZonaIndustrial(models.Model):
 	produccion = models.CharField(max_length=50)
@@ -49,20 +49,20 @@ class ZonaIndustrial(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class LineaCostera(models.Model):
-	id = models.IntegerField()
+	_id = models.IntegerField()
 
 	mpoly = models.MultiLineStringField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class AUC(models.Model):
 	supm2 = models.FloatField()
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class CursosAgua(models.Model):
 	tipo = models.CharField(max_length=20)
@@ -70,7 +70,7 @@ class CursosAgua(models.Model):
 	dist = models.FloatField()
 
 	mpoly = models.MultiLineStringField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class Manzanas(models.Model):
 	id_manz = models.CharField(max_length=50)
@@ -83,7 +83,7 @@ class Manzanas(models.Model):
 	supm2 = models.FloatField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class Barrios(models.Model):
 	barrio = models.CharField(max_length=50)
@@ -93,7 +93,7 @@ class Barrios(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class EspaciosVerdes(models.Model):
 	nombre = models.CharField(max_length=50)
@@ -101,7 +101,7 @@ class EspaciosVerdes(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class Cementerio(models.Model):
 	nombre = models.CharField(max_length=50)
@@ -109,7 +109,7 @@ class Cementerio(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 
 class Puentes(models.Model):
@@ -119,7 +119,7 @@ class Puentes(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 
 class Parcelas(models.Model):
@@ -145,7 +145,7 @@ class Parcelas(models.Model):
 	sup_dif = models.FloatField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 
 class Piscinas(models.Model):
@@ -157,7 +157,7 @@ class Piscinas(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 
 class SitiosInteres(models.Model):
@@ -167,7 +167,7 @@ class SitiosInteres(models.Model):
 	detalle = models.CharField(max_length=30)
 
 	mpoly = models.MultiPointField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class AreasDeportivas(models.Model):
 	cancha = models.CharField(max_length=25)
@@ -176,7 +176,7 @@ class AreasDeportivas(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class Aeropuerto(models.Model):
 	nombre = models.CharField(max_length=50)
@@ -185,7 +185,7 @@ class Aeropuerto(models.Model):
 	t = models.IntegerField()
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 class GridY(models.Model):
 	extx = models.FloatField()
@@ -193,11 +193,11 @@ class GridY(models.Model):
 	extz = models.FloatField()
 
 	mpoly = models.MultiLineStringField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
 
 
 class AllParcelas(models.Model):
-	fid_ = models.IntegerField()
+	fid = models.IntegerField()
 	entity = models.CharField(max_length=16)
 	handle = models.CharField(max_length=16)
 	layer = models.CharField(max_length=254)
@@ -232,4 +232,4 @@ class AllParcelas(models.Model):
 	nuevo_lote = models.CharField(max_length=4)
 
 	mpoly = models.MultiPolygonField()
-    objects = models.GeoManager()
+	objects = models.GeoManager()
