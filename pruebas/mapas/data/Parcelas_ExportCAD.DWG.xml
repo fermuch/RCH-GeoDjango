@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!--<!DOCTYPE metadata SYSTEM "http://www.esri.com/metadata/esriprof80.dtd">-->
+<metadata xml:lang="es"><Esri><MetaID>{00F70854-42AE-4EF6-B422-82A0A562472E}</MetaID><CreaDate>20110929</CreaDate><CreaTime>13302900</CreaTime><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Conversion Tools.tbx\ExportCAD" Date="20110929" Time="133029">ExportCAD Parcelario\Parcelas DWG_R2000 C:\LibreSIG\Shapes\Parcelas_ExportCAD.DWG Use_Filenames_in_Tables Overwrite_Existing_Files #</Process></lineage></DataProperties></Esri></metadata>
