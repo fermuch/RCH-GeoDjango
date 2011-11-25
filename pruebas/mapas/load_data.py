@@ -125,31 +125,31 @@ aeropuerto_mapping = {
     'geometria' : 'MULTIPOLYGON'
 }
 allparcelas_mapping = {
-    'fid' : 'FID', # TODO: Revisar
+    'fid' : 'FID_',
     'entity' : 'Entity',
     'handle' : 'Handle',
     'layer' : 'Layer',
     'lyrfrzn' : 'LyrFrzn',
     'lyrlock' : 'LyrLock',
     'lyron' : 'LyrOn',
-    'lyrvpfrzn' : 'LyrVpFrzn', # TODO: Revisar
+    'lyrvpfrzn' : 'LyrVPFrzn',
     'lyrhandle' : 'LyrHandle',
     'color' : 'Color',
     'entcolor' : 'EntColor',
     'lyrcolor' : 'LyrColor',
     'blkcolor' : 'BlkColor',
-    'linetype' : 'LineType',
-    'entlinetyp' : 'EntLineTyp',
+    'linetype' : 'Linetype',
+    'entlinetyp' : 'EntLinetyp',
     'lyrlntype' : 'LyrLnType',
-    'blklinetyp': 'BlkLineTyp',
+    'blklinetyp': 'BlkLinetyp',
     'elevation' : 'Elevation',
     'thickness' : 'Thickness',
-    'linewt' : 'LineWT', # TODO: Revisar
+    'linewt' : 'LineWt',
     'entlinewt' : 'EntLineWt',
-    'lyrlinewt' : 'LyrLineWT',
-    'blklinewt' : 'BlkLineWT',
+    'lyrlinewt' : 'LyrLineWt',
+    'blklinewt' : 'BlkLineWt',
     'refname' : 'RefName',
-    'ltscale' : 'LtScale',
+    'ltscale' : 'LTScale',
     'extx' : 'ExtX',
     'exty' : 'ExtY',
     'extz' : 'ExtZ',
@@ -157,7 +157,7 @@ allparcelas_mapping = {
     'docpath' : 'DocPath',
     'doctype' : 'DocType',
     'docver' : 'DocVer',
-    'nuevo_lote' : 'Nuevo_Lote',
+    'nuevo_lote' : 'NUEVO_LOTE',
     'geometria' : 'MULTIPOLYGON'
 }
 
@@ -168,76 +168,77 @@ def run(verbose=True):
     
     print "#>>> Importando Ferrocarriles"
     lm = LayerMapping(Ferrocarril, shapes, ferrocarril_mapping, transform=True, layer=0)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Lagos"
     lm = LayerMapping(Lagos, shapes, lagos_mapping, transform=True, layer=1)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Caminos"
     lm = LayerMapping(Caminos, shapes, caminos_mapping, transform=True, layer=3)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Zona Industrial"
     lm = LayerMapping(ZonaIndustrial, shapes, zonaindustrial_mapping, transform=True, layer=4)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Línea Costera"
     lm = LayerMapping(LineaCostera, shapes, lineacostera_mapping, transform=True, layer=5)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando AUC"
     lm = LayerMapping(AUC, shapes, auc_mapping, transform=True, layer=6)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Cursos Agua"
     lm = LayerMapping(CursosAgua, shapes, cursosagua_mapping, transform=True, layer=7)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Manzanas"
     lm = LayerMapping(Manzanas, shapes, manzanas_mapping, transform=True, layer=8)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Barrios"
     lm = LayerMapping(Barrios, shapes, barrios_mapping, transform=True, layer=9)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Espacios Verdes"
     lm = LayerMapping(EspaciosVerdes, shapes, espaciosverdes_mapping, transform=True, layer=10)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Cementerio"
     lm = LayerMapping(Cementerio, shapes, cementerio_mapping, transform=True, layer=11)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Puentes"
     lm = LayerMapping(Puentes, shapes, puentes_mapping, transform=True, layer=12)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Parcelas"
     # TODO: un polígono tiene errores al importar, por eso saqué el strict.
     lm = LayerMapping(Parcelas, shapes, parcelas_mapping, transform=True, layer=13)
-    lm.save(verbose=False, strict=False, progress=True)
+    #lm.save(verbose=False, strict=False, progress=True)
 
     print "#>>> Importando Piscinas"
     lm = LayerMapping(Piscinas, shapes, piscinas_mapping, transform=True, layer=14)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
 
     print "#>>> Importando Sitios de Interés"
     lm = LayerMapping(SitiosInteres, shapes, sitiosinteres_mapping, transform=True, layer=15)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
     
     print "#>>> Importando Áreas Deportivas"
     lm = LayerMapping(AreasDeportivas, shapes, areasdeportivas_mapping, transform=True, layer=16)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
     
     print "#>>> Importando Aeropuerto"
     lm = LayerMapping(Aeropuerto, shapes, aeropuerto_mapping, transform=True, layer=17)
-    lm.save(verbose=False, strict=True, progress=True)
+    #lm.save(verbose=False, strict=True, progress=True)
     
     print "#>>> Importando All Parcelas"
-    lm = LayerMapping(AllParcelas, shapes, allparcelas_mapping, transform=True, layer=17)
-    lm.save(verbose=False, strict=True, progress=True)
+    # TODO: un polígono tiene errores al importar, por eso saqué el strict.
+    lm = LayerMapping(AllParcelas, shapes, allparcelas_mapping, transform=True, layer=19)
+    lm.save(verbose=False, strict=False, progress=True)
 
 
 
