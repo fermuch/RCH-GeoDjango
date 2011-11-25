@@ -114,7 +114,52 @@ sitiosinteres_mapping = {
     'detalle' : 'Detalle',
     'geometria' : 'MULTIPOINT'
 }
-
+areasdeportivas_mapping = {
+    'cancha' : 'Cancha',
+    'club' : 'Club',
+    'geometria' : 'MULTIPOLYGON'
+}
+aeropuerto_mapping = {
+    'nombre' : 'Nombre',
+    'perimetro' : 'Perimetro',
+    'geometria' : 'MULTIPOLYGON'
+}
+allparcelas_mapping = {
+    'fid' : 'FID', # TODO: Revisar
+    'entity' : 'Entity',
+    'handle' : 'Handle',
+    'layer' : 'Layer',
+    'lyrfrzn' : 'LyrFrzn',
+    'lyrlock' : 'LyrLock',
+    'lyron' : 'LyrOn',
+    'lyrvpfrzn' : 'LyrVpFrzn', # TODO: Revisar
+    'lyrhandle' : 'LyrHandle',
+    'color' : 'Color',
+    'entcolor' : 'EntColor',
+    'lyrcolor' : 'LyrColor',
+    'blkcolor' : 'BlkColor',
+    'linetype' : 'LineType',
+    'entlinetyp' : 'EntLineTyp',
+    'lyrlntype' : 'LyrLnType',
+    'blklinetyp': 'BlkLineTyp',
+    'elevation' : 'Elevation',
+    'thickness' : 'Thickness',
+    'linewt' : 'LineWT', # TODO: Revisar
+    'entlinewt' : 'EntLineWt',
+    'lyrlinewt' : 'LyrLineWT',
+    'blklinewt' : 'BlkLineWT',
+    'refname' : 'RefName',
+    'ltscale' : 'LtScale',
+    'extx' : 'ExtX',
+    'exty' : 'ExtY',
+    'extz' : 'ExtZ',
+    'docname' : 'DocName',
+    'docpath' : 'DocPath',
+    'doctype' : 'DocType',
+    'docver' : 'DocVer',
+    'nuevo_lote' : 'Nuevo_Lote',
+    'geometria' : 'MULTIPOLYGON'
+}
 
 shapes = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.dirname('data/Parcelas.shp')))
 
@@ -181,9 +226,20 @@ def run(verbose=True):
     print "#>>> Importando Sitios de Interés"
     lm = LayerMapping(SitiosInteres, shapes, sitiosinteres_mapping, transform=True, layer=15)
     lm.save(verbose=False, strict=True, progress=True)
+    
+    print "#>>> Importando Áreas Deportivas"
+    lm = LayerMapping(AreasDeportivas, shapes, areasdeportivas_mapping, transform=True, layer=16)
+    lm.save(verbose=False, strict=True, progress=True)
+    
+    print "#>>> Importando Aeropuerto"
+    lm = LayerMapping(Aeropuerto, shapes, aeropuerto_mapping, transform=True, layer=17)
+    lm.save(verbose=False, strict=True, progress=True)
+    
+    print "#>>> Importando All Parcelas"
+    lm = LayerMapping(AllParcelas, shapes, allparcelas_mapping, transform=True, layer=17)
+    lm.save(verbose=False, strict=True, progress=True)
 
 
 
 
-
-    print "#>>> Finalizado!"
+    print "#>>> Finalizado! :D"
