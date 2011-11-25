@@ -45,9 +45,6 @@ class LineaCostera(models.Model):
 	objects = models.GeoManager()
 
 class AUC(models.Model):
-
-
-
 	geometria = models.MultiPolygonField()
 	objects = models.GeoManager()
 
@@ -85,15 +82,11 @@ class Barrios(models.Model):
 class EspaciosVerdes(models.Model):
 	nombre = models.CharField(max_length=50)
 
-
-
 	geometria = models.MultiPolygonField()
 	objects = models.GeoManager()
 
 class Cementerio(models.Model):
 	nombre = models.CharField(max_length=50)
-
-
 
 	geometria = models.MultiPolygonField()
 	objects = models.GeoManager()
@@ -139,10 +132,8 @@ class Piscinas(models.Model):
 	publica = models.IntegerField()
 	club = models.CharField(max_length=50)
 	nomenclatu = models.CharField(max_length=30)
-
 	perimetro = models.FloatField()
-
-
+	
 	geometria = models.MultiPolygonField()
 	objects = models.GeoManager()
 
@@ -160,26 +151,14 @@ class AreasDeportivas(models.Model):
 	cancha = models.CharField(max_length=25)
 	club = models.CharField(max_length=50)
 
-
-
 	geometria = models.MultiPolygonField()
 	objects = models.GeoManager()
 
 class Aeropuerto(models.Model):
 	nombre = models.CharField(max_length=50)
-
 	perimetro = models.FloatField()
 
-
 	geometria = models.MultiPolygonField()
-	objects = models.GeoManager()
-
-class GridY(models.Model):
-	extx = models.FloatField()
-	exty = models.FloatField()
-	extz = models.FloatField()
-
-	geometria = models.MultiLineStringField()
 	objects = models.GeoManager()
 
 
