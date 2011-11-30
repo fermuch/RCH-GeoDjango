@@ -1,0 +1,46 @@
+
+<html>
+<head>
+  <title>Asd</title>
+  <script src="/media/polymaps.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="inner"></div>
+<script type="text/javascript">
+var po = org.polymaps;
+
+var map = po.map()
+    .container(document.getElementById("inner").appendChild(po.svg("svg")))
+    //.center({lat: -29.7163, lon: -57.1149})
+    //.zoomRange([0, 20])
+    //.zoom(14)
+    .add(po.interact())
+    .add(po.arrow())
+    .add(po.compass())
+    .add(po.dblclick())
+    .add(po.drag())
+    .add(po.grid())
+    .add(po.hash())
+    .add(po.wheel());
+
+/*map.add(po.compass()
+    .pan("none"));*/
+
+/*map.add(po.image()
+    .url(po.url("http://{S}tile.cloudmade.com"
+    + "/1a1b06b230af4efdbb989ea99e9841af" // http://cloudmade.com/register
+    + "/998/256/{Z}/{X}/{Y}.png")
+    .hosts(["a.", "b.", "c.", ""])));*/
+
+/*var data = [{"geometry":{"type": "Polygon", "coordinates":[ [ -29.7163, -57.1149 ], [ -30, -60 ], [-10, 0 ] ]}}]
+map.add(po.geoJson().features(data));*/
+
+{% for i in ferrocarril %}
+{% autoescape off %}
+map.add(po.geoJson()
+		.features({{i.geometria.geojson}}));
+{% endautoescape %}
+{% endfor %}
+</script>
+</body>
+</html>
